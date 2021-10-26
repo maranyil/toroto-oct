@@ -1,0 +1,12 @@
+.projects-g {
+    height: max-content;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+
+    .grid-projects {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

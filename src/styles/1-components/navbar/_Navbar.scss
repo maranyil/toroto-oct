@@ -1,0 +1,58 @@
+.navbar {
+  background-color: $azul-to;
+  height: 3.5rem;
+  padding: 0 10rem;
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  .logo {
+    background: transparent;
+    border: none;
+
+    cursor: pointer;
+  }
+
+  .nav-options {
+    color: $blanco-to;
+    width: 45vw;
+    height: 2rem;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    list-style-type: none;
+    text-transform: uppercase;
+    font: 0.9rem normal Roboto, sans-serif;
+
+    .nav-item {
+      cursor: pointer;
+      padding: 0.5rem;
+      letter-spacing: 1.25px;
+      transition: border-radius 1.2s;
+      -webkit-transition: border-radius 1.2s;
+
+      &:hover {
+          border-radius: 50px 10px;
+          background-color: $blanco-to; 
+          color: $gris1; 
+      }
+
+      &:active {
+          background-color: $rosa-to;
+          color: $gris5;
+      }
+    }
+
+    a {
+      text-decoration: none;
+
+      &:visited {
+        color: $amarillo-to;
+      }
+    }
+  }
+}

@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&family=Roboto:wght@400;500;700&display=swap");
+.Main {
+  text-align: center;
+}
+
+.navbar {
+  background-color: #1A30DB;
+  height: 3.5rem;
+  padding: 0 10rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navbar .logo {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar .nav-options {
+  color: #FFFFFF;
+  width: 45vw;
+  height: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+  text-transform: uppercase;
+  font: 0.9rem normal Roboto, sans-serif;
+}
+
+.navbar .nav-options .nav-item {
+  cursor: pointer;
+  padding: 0.5rem;
+  letter-spacing: 1.25px;
+  transition: border-radius 1.2s;
+  -webkit-transition: border-radius 1.2s;
+}
+
+.navbar .nav-options .nav-item:hover {
+  border-radius: 50px 10px;
+  background-color: #FFFFFF;
+  color: #333333;
+}
+
+.navbar .nav-options .nav-item:active {
+  background-color: #ba1863;
+  color: #f2f2f2;
+}
+
+.navbar .nav-options a {
+  text-decoration: none;
+}
+
+.navbar .nav-options a:visited {
+  color: #ffbc15;
+}
+
+.mapcard {
+  background-color: transparent;
+  height: 20rem;
+  width: 18rem;
+  position: absolute;
+  text-align: left;
+  margin: 10% 70% 7% 7%;
+}
+
+.mapcard h1 {
+  font: 2.8rem Roboto, sans-serif;
+  height: 10rem;
+}
+
+.mapcard p {
+  font: 1rem Roboto, sans-serif;
+}
+
+.mapcard .cardbtn {
+  width: 100%;
+  height: 3rem;
+  background-color: #333333;
+  border-radius: 5px;
+  border: none;
+  font: 1rem Roboto, sans-serif;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-radius 1.2s;
+  -webkit-transition: border-radius 1.2s;
+}
+
+.mapcard .cardbtn:hover {
+  border-radius: 50px 10px;
+  background-color: #ba1863;
+}
+
+.project-link {
+  width: 100vw;
+  position: absolute;
+  background-color: transparent;
+  margin-top: 80vh;
+  margin-bottom: 1rem;
+}
+
+.project-link h2 {
+  font: bold 1.2rem/2rem Oswald;
+}
+
+.mapbox-parent-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.mapbox-parent-container .mapboxgl-control-container {
+  display: none;
+}
+
+.mapbox-parent-container .map-container {
+  width: 100%;
+  height: 100%;
+}
+
+.mapbox-parent-container .map-overview-container {
+  position: absolute;
+  top: .5rem;
+  left: 73vw;
+  width: 25%;
+  height: 25%;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.projects-g {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.projects-g .grid-projects {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+}
+
+body {
+  margin: 0;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,32 @@
+@import './MapCard';
+@import './ProjectLink';
+
+.mapbox-parent-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    .mapboxgl-control-container {
+        display: none;
+    }
+
+    .map-container {
+        width: 100%;
+        height: 100%;
+      }
+      
+      .map-overview-container {
+        position: absolute;
+        top: .5rem;
+        left: 73vw;
+        width: 25%;
+        height: 25%;
+        overflow: hidden;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+  }
+  
+  
+ 
