@@ -122,25 +122,26 @@
 
 .project-card {
   background-color: transparent;
-  height: 30rem;
+  max-height: 34rem;
   width: 28rem;
   border-radius: 1.2rem 1.2rem;
   color: #373737;
   -webkit-box-shadow: 0 8px 8px -4px #bdbdbd;
           box-shadow: 0 8px 8px -4px #bdbdbd;
   font-family: 'Roboto', sans-serif;
+  margin-bottom: 2rem;
 }
 
 .project-card .card-img {
-  height: 4.2rem;
-  width: 26rem;
+  height: 10rem;
+  width: 100%;
   border-radius: 1.2rem 1.2rem 0 0;
 }
 
 .project-card .card-info {
   background-color: #FFFFFF;
   padding: 1.2rem;
-  height: 23rem;
+  height: 22rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,6 +186,7 @@
   border-radius: 50px 10px;
   background-color: #ba1863;
   color: #f2f2f2;
+  border: none;
 }
 
 .projects-g {
