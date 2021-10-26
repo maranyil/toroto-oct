@@ -3,7 +3,7 @@ import GridProjects from './GridProjects'
 
 const ProjectsG = () => {
     return (
-        <div className="projects-g">
+        <div id="project-section" className="projects-g">
          <GridProjects></GridProjects>            
         </div>
     )

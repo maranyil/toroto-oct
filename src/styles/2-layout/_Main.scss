@@ -1,0 +1,12 @@
+@import '../1-components/mapbox/MapCard';
+@import '../1-components/mapbox/Mapbox';
+@import '../1-components/projects/Projects';
+@import '../1-components/navbar/Navbar';
+@import '../1-components/navbar/Footer';
+
+.Main {
+   .projects-g {
+       margin-top: 35vh;
+       margin-bottom: 10vh;
+   }
+}

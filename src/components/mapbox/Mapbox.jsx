@@ -1,12 +1,32 @@
 import React, { useRef, useState, useEffect } from 'react';
-import mapboxgl from 'mapbox-gl';
+import mapboxgl, { Marker } from 'mapbox-gl';
 import MapCard from './MapCard';
 import ProjectLink from './ProjectLink';
 
 mapboxgl.accessToken =
   'pk.eyJ1IjoibWFyYW11bGF0byIsImEiOiJja3V5d294NHQxdnBsMndwNmJibDdkbmFxIn0.S45txLTZf7iE7mrY7J4KeA';
 
+  /*const MapMarker = () => {
+    const [markers, setMarkers] = useState();
+  const apiURL = 'https://fieldops-api.toroto.mx/api/projects'
+
+  // Fetching data to set markers
+  const fetchData = async () => {
+    const response = await
+    fetch(apiURL)
+    .then((response) => response.json());
+
+    setMarkers(response.data);
+}
+
+useEffect(() => {
+    fetchData();
+})*/
+
+
 const Mapbox = () => {
+
+
   const mapContainer = useRef(null);
   const map = useRef(null);
 
@@ -132,13 +152,13 @@ const Mapbox = () => {
 
   return (
     <div className="mapbox-parent-container">
-      {/* PARENT MAP */}
+     
       <div ref={mapContainer} className="map-container">
         <MapCard />
         <ProjectLink />
         </div>
 
-      {/* OVERVIEW MAP */}
+      
       <div className="map-overview-container">
         <div ref={mapOverviewContainer} className="map-container"></div>
       </div>

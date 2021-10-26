@@ -4,7 +4,7 @@ import logo from '../../assets/png/logo.png';
 
 const Navbar = () => {
     return (
-        <div className="navbar">
+        <div id="top" className="navbar">
             <Link to="/" onClick={() => window.location.href="/"} className="logo">
                 <img src={logo} alt="main Toroto logo"/>
             </Link>

@@ -1,6 +1,6 @@
 .mapcard {
     background-color: transparent;
-    height: 20rem;
+    height: 80vh;
     width: 18rem;
 
     position: absolute;
@@ -33,7 +33,7 @@
         -webkit-transition: border-radius 1.2s;
 
         &:hover {
-            border-radius: 50px 10px;
+            border-radius: 35px 10px;
             background-color: $rosa-to;  
         }
     }
