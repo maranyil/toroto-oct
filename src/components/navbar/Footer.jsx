@@ -26,7 +26,7 @@ const Footer = () => {
           </a>
         </li>
         <li className="nav-item">
-          <a>
+          <a href="https://twitter.com/holatoroto">
               <img src={twit} alt="twitter link"/>
           </a>
         </li>

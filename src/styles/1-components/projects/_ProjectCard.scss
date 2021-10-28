@@ -1,9 +1,10 @@
 .project-card {
   background-color: transparent;
-  max-height: 34rem;
+  min-height: 34rem;
+  max-height: fit-content;
   width: 28rem;
 
-  border-radius: 1.2rem 1.2rem;
+  border-radius: 1.2rem;
   color: $negro-to;
   box-shadow: 0 8px 8px -4px $gris4;
 
@@ -15,38 +16,98 @@
     height: 10rem;
     width: 100%;
     border-radius: 1.2rem 1.2rem 0 0;
+    object-fit: cover;
   }
 
   .card-info {
     background-color: $blanco-to;
     padding: 1.2rem;
-    height: 22rem;
+    min-height: 24rem;
+    max-height: fit-content;
+
+    border-radius: 0 0 1.2rem 1.2rem;
 
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
+    justify-content: space-between;
+  
 
     text-align: left;
 
     h6 {
       margin: 5px 0;
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
 
     h4 {
-      margin: 5px 0;
-      font-size: 1.8rem;
+      margin: 2px 0;
+      font-size: 1.6rem;
       font-weight: 400;
     }
 
     p {
       font-size: 0.8rem;
+      display: -webkit-box;
+
+      max-width: 100%;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+
+      transition-duration: .2s;
+
+      &:hover {
+        -webkit-line-clamp: 5;
+      }
+    }
+
+    .service-container {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 10px;
+      row-gap: 10px;
+      align-content: center;
+      
+      margin-bottom: 1.2rem;
+
+      .services-btn {
+        height: 2.7rem;
+        width: 100%;
+        background-color: transparent;
+
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        border-radius: 40px;
+        border: $gris1 solid 1px;
+
+        white-space: normal;
+        font: .8rem Roboto;
+
+        img {
+          object-fit: contain;
+        }
+
+        &:hover {
+          background-color: $azul-to;
+          color: $blanco-to;
+
+          img {
+            filter: invert(100%);
+          }
+        }
+      }
     }
 
     .full-view {
-      width: 100%;
       height: 3rem;
+      width: 100%;
       background-color: transparent;
-      margin-top: auto;
+      
 
       border-radius: 5px;
       border: $gris1 solid 1px;

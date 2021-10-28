@@ -1,12 +1,17 @@
 import React from 'react';
+import Footer from '../components/navbar/Footer';
 import Navbar from '../components/navbar/Navbar';
 import ProjectsG from '../components/projects/ProjectsG';
 
-const Projects = () => {
+const Projects = ({projects, setProjects}) => {
+  
   return (
     <div>
-      <Navbar></Navbar>
-      <ProjectsG></ProjectsG>
+      <Navbar />
+      <ProjectsG
+      projects={projects}
+      setProjects={setProjects} />
+      <Footer />
     </div>
   );
 };

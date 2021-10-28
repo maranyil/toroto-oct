@@ -1,34 +1,39 @@
 import React from 'react';
-import ClampLines from 'react-clamp-lines';
+import  { useHistory } from 'react-router-dom';
+import medal from '../../assets/png/service_icon.png';
 
-const ProjectCard = ({ project, id }) => {
-  
+const ProjectCard = ({ project }) => {
   let imgArray = project.images;
-  let randomI = Math.floor(Math.random()*5);
+  let randomI = Math.floor(Math.random() * 5);
+  
+  const history = useHistory();
+
+  const goToProject = (e) => {
+    e.preventDefault();
+    history.push(`/proyectos/${project.id}`)
+  }
 
   return (
-    <div className="project-card" key={id}>
-      <img className="card-img" src={imgArray[randomI]}/>
+    <div className="project-card" key={project.id}>
+      <img className="card-img" src={imgArray[randomI]} alt="Some about Toroto Projects"/>
       <div className="card-info">
         <h6>{project.location}</h6>
 
         <h4>{project.name}</h4>
-        
-        <ClampLines 
-        text={project.description}
-        id="default"
-        lines={3}
-        ellipsis="..."
-        moreText="Expand"
-        lessText="Collapse"
-        className="custom-class"
-        innerElement="p"/>
 
-        <button>{project.services[0]}</button>
-        <button>{project.services[1]}</button>
-        <button className="full-view">Ver proyecto completo</button>
+        <p>{project.description}</p>
+
+        <div className="service-container">
+          {project.services.map((service) => (
+            <div className="services-btn"><img src={medal} alt="logo"/> {service}</div>
+          ))}
+        </div>
+        
+        <button className="full-view" value={project.id} onClick={goToProject}> 
+          Ver proyecto completo
+          </button>
+        
       </div>
-      
     </div>
   );
 };

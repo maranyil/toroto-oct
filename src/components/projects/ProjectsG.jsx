@@ -1,10 +1,12 @@
 import React from 'react'
 import GridProjects from './GridProjects'
 
-const ProjectsG = () => {
+const ProjectsG = ({projects, setProjects}) => {
     return (
         <div id="project-section" className="projects-g">
-         <GridProjects></GridProjects>            
+         <GridProjects
+         projects={projects}
+         setProjects={setProjects}/>            
         </div>
     )
 }

@@ -12,8 +12,8 @@ const Navbar = () => {
                 <li className="nav-item"><Link to="/proyectos">Proyectos</Link></li>
                 <li className="nav-item"><a href="https://www.toroto.mx/es">Sobre Toroto</a></li>
                 <li className="nav-item"><a href="https://www.toroto.mx/es/blog">Blog</a></li>
-                <li className="nav-item"><a>Meta registro</a></li>
-                <li className="nav-item"><a>Contacto</a></li>    
+                <li className="nav-item"><a href="https://www.toroto.mx/es">Meta registro</a></li>
+                <li className="nav-item"><a href="mailto:maranyil@tuta.io">Contacto</a></li>    
             </ul>
         </div>
     )

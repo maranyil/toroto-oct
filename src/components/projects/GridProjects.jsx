@@ -1,26 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+
 import ProjectCard from './ProjectCard';
 
-const GridProjects = () => {
-  const [projects, setProjects] = useState();
+const GridProjects = ({projects, setProjects}) => {
+  
   const [loading, setLoading] = useState(true);
+
   const [err, setErr] = useState();
 
   const apiURL = 'https://fieldops-api.toroto.mx/api/projects'
-  let headers = {}
-
-  /*const fetchData = async () => {
-      const res = await
-      fetch(apiURL)
-      .then((res) => res.json());
-
-      setProjects(res.data);
-      setLoading(false)
-  }
-
-  useEffect(() => {
-      fetchData();
-  })*/
+  
 
   useEffect(() => {
     fetch(apiURL, {
@@ -51,9 +40,9 @@ const GridProjects = () => {
     {loading ? <h1>Cargando...</h1> : (
       <div className="grid-projects">
     {projects &&
-      projects.map((project, id) => (
+      projects.map((project) => (
         <ProjectCard 
-        key={id}
+        key={project.id}
         project={project}/>   
      ))}
      </div>
