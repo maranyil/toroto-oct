@@ -7,6 +7,7 @@
   background-color: transparent;
   height: 80vh;
   width: 18rem;
+  z-index: 2;
   position: absolute;
   text-align: left;
   margin: 10% 70% 7% 7%;
@@ -44,6 +45,7 @@
   background-color: transparent;
   height: 80vh;
   width: 18rem;
+  z-index: 2;
   position: absolute;
   text-align: left;
   margin: 10% 70% 7% 7%;
@@ -81,6 +83,7 @@
   width: 100vw;
   position: absolute;
   background-color: transparent;
+  z-index: 2;
   margin-top: 80vh;
   margin-bottom: 1rem;
 }
@@ -120,9 +123,20 @@
   -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.p-location {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.p-name {
+  margin: 2px 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
 .project-card {
   background-color: transparent;
-  min-height: 34rem;
+  min-height: 32rem;
   max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
@@ -135,8 +149,15 @@
   margin-bottom: 2rem;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .project-card {
+    -webkit-animation: wipe-enter 1s;
+            animation: wipe-enter 1s;
+  }
+}
+
 .project-card .card-img {
-  height: 10rem;
+  height: 8rem;
   width: 100%;
   border-radius: 1.2rem 1.2rem 0 0;
   -o-object-fit: cover;
@@ -146,7 +167,7 @@
 .project-card .card-info {
   background-color: #FFFFFF;
   padding: 1.2rem;
-  min-height: 24rem;
+  min-height: 20rem;
   max-height: -webkit-fit-content;
   max-height: -moz-fit-content;
   max-height: fit-content;
@@ -162,17 +183,6 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   text-align: left;
-}
-
-.project-card .card-info h6 {
-  margin: 5px 0;
-  font-size: 0.9rem;
-}
-
-.project-card .card-info h4 {
-  margin: 2px 0;
-  font-size: 1.6rem;
-  font-weight: 400;
 }
 
 .project-card .card-info p {
@@ -417,6 +427,61 @@
 .Main .projects-g {
   margin-top: 35vh;
   margin-bottom: 10vh;
+}
+
+.projectinfo {
+  height: 30rem;
+  font-family: 'Roboto', sans-serif;
+  margin: 1.5rem 9rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+}
+
+.projectinfo .service-container {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  row-gap: 10px;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.projectinfo .service-container .services-btn {
+  height: 2.7rem;
+  width: 100%;
+  background-color: transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 40px;
+  border: #333333 solid 1px;
+  white-space: normal;
+  font: .8rem Roboto;
+}
+
+.projectinfo img {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 1.2rem;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 body {

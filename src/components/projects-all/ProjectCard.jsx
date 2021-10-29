@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import  { useHistory } from 'react-router-dom';
 import medal from '../../assets/png/service_icon.png';
+import AOS from 'aos';
 
 const ProjectCard = ({ project }) => {
+ 
   let imgArray = project.images;
   let randomI = Math.floor(Math.random() * 5);
   
@@ -13,18 +15,25 @@ const ProjectCard = ({ project }) => {
     history.push(`/proyectos/${project.id}`)
   }
 
+  useEffect(() => {
+    AOS.init({
+      duration : 2000
+    });
+  }, []);
+
   return (
-    <div className="project-card" key={project.id}>
+    <div className="project-card" key={project.id} data-aos="flip-left">
+      
       <img className="card-img" src={imgArray[randomI]} alt="Some about Toroto Projects"/>
       <div className="card-info">
-        <h6>{project.location}</h6>
+        <h6 className="p-location">{project.location}</h6>
 
-        <h4>{project.name}</h4>
+        <h4 className="p-name">{project.name}</h4>
 
         <p>{project.description}</p>
 
         <div className="service-container">
-          {project.services.map((service) => (
+          {project.services.slice(0, 2).map((service) => (
             <div className="services-btn"><img src={medal} alt="logo"/> {service}</div>
           ))}
         </div>
@@ -34,6 +43,7 @@ const ProjectCard = ({ project }) => {
           </button>
         
       </div>
+      
     </div>
   );
 };

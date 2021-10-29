@@ -1,6 +1,17 @@
+.p-location {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.p-name {
+  margin: 2px 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
 .project-card {
   background-color: transparent;
-  min-height: 34rem;
+  min-height: 32rem;
   max-height: fit-content;
   width: 28rem;
 
@@ -12,8 +23,12 @@
 
   margin-bottom: 2rem;
 
+  @media (prefers-reduced-motion: no-preference) {
+      animation: wipe-enter 1s;  
+  }
+
   .card-img {
-    height: 10rem;
+    height: 8rem;
     width: 100%;
     border-radius: 1.2rem 1.2rem 0 0;
     object-fit: cover;
@@ -22,7 +37,7 @@
   .card-info {
     background-color: $blanco-to;
     padding: 1.2rem;
-    min-height: 24rem;
+    min-height: 20rem;
     max-height: fit-content;
 
     border-radius: 0 0 1.2rem 1.2rem;
@@ -33,17 +48,6 @@
   
 
     text-align: left;
-
-    h6 {
-      margin: 5px 0;
-      font-size: 0.9rem;
-    }
-
-    h4 {
-      margin: 2px 0;
-      font-size: 1.6rem;
-      font-weight: 400;
-    }
 
     p {
       font-size: 0.8rem;

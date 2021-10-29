@@ -1,0 +1,45 @@
+.projectinfo {
+    height: 30rem;
+
+    font-family: 'Roboto', sans-serif;
+    margin: 1.5rem 9rem;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+    .service-container {
+        width: 100%;
+  
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 10px;
+        row-gap: 10px;
+        align-content: center;
+        
+        margin-bottom: 1.2rem;
+  
+        .services-btn {
+          height: 2.7rem;
+          width: 100%;
+          background-color: transparent;
+  
+          display: flex;
+          flex-flow: row;
+          justify-content: flex-start;
+          align-items: center;
+  
+          border-radius: 40px;
+          border: $gris1 solid 1px;
+  
+          white-space: normal;
+          font: .8rem Roboto;
+        }
+    }
+
+    img {
+        width: 30rem;
+        height: 30rem;
+        border-radius: 1.2rem;
+        object-fit: cover;
+    }
+}

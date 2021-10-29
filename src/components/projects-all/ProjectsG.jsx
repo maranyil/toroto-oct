@@ -1,5 +1,6 @@
-import React from 'react'
-import GridProjects from './GridProjects'
+import React from 'react';
+import GridProjects from './GridProjects';
+
 
 const ProjectsG = ({projects, setProjects}) => {
     return (
@@ -7,6 +8,7 @@ const ProjectsG = ({projects, setProjects}) => {
          <GridProjects
          projects={projects}
          setProjects={setProjects}/>            
+         
         </div>
     )
 }

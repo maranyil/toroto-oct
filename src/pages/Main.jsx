@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../components/navbar/Navbar';
 import Mapbox from '../components/mapbox/Mapbox';
-import ProjectsG from '../components/projects/ProjectsG';
+import ProjectsG from '../components/projects-all/ProjectsG';
 import Footer from '../components/navbar/Footer';
 
 const Main = ({projects, setProjects}) => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import ProjectCard from './ProjectCard';
 
@@ -8,11 +8,11 @@ const GridProjects = ({projects, setProjects}) => {
 
   const [err, setErr] = useState();
 
-  const apiURL = 'https://fieldops-api.toroto.mx/api/projects'
   
 
   useEffect(() => {
-    fetch(apiURL, {
+
+    fetch('https://fieldops-api.toroto.mx/api/projects', {
       method: "GET",
       mode: 'cors',
       headers: Headers
