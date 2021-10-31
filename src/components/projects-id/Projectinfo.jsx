@@ -3,22 +3,23 @@ import medal from '../../assets/png/service_icon.png'
 
 
 const Projectinfo = ({projects}) => {
-  console.log(projects.services)
+ 
     return (
         <div className="projectinfo">
+          <div className="p-grid">
           <div className="project-text">
             <h6 className="p-location">{projects.location}</h6>
             <h4 className="p-name">{projects.name}</h4>
-            <p>{projects.description}</p>
-
-            {/*<div className="service-container">
-          {projects.services.map((service) => (
-            <div className="services-btn"><img src={medal} alt="logo"/> {service}</div>
+          </div>
+          <div className="s-container">
+          {projects['services'].map((service) => (
+            <div className="s-btn"><img className="limage" src={medal} alt="medal"/>{service}</div>
           ))}
-          </div>*/}
+          </div>
+          <p>{projects.description}</p>
           </div>
 
-            {/*<img src={projects.images[0]}></img>*/}
+            <img className="pimage" src={projects.images['0']}></img>
         </div>
     )
 }

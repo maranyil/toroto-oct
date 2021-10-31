@@ -1,31 +1,33 @@
 import React, { useRef, useState, useEffect } from 'react';
-import mapboxgl, { Marker } from 'mapbox-gl';
+import mapboxgl from 'mapbox-gl';
 import MapCard from './MapCard';
 import ProjectLink from './ProjectLink';
 
 mapboxgl.accessToken =
   'pk.eyJ1IjoibWFyYW11bGF0byIsImEiOiJja3V5d294NHQxdnBsMndwNmJibDdkbmFxIn0.S45txLTZf7iE7mrY7J4KeA';
 
-  /*const MapMarker = () => {
-    const [markers, setMarkers] = useState();
-  const apiURL = 'https://fieldops-api.toroto.mx/api/projects'
+const Mapbox = ({ projects }) => {
+  /*{projects && projects.map((project) => {
+    let torotoData = project.geometry;
+  })}*/
+  const torotoData =
+    projects && projects.map((project) => project.geometry.coordinates[0]);
+  console.log(torotoData);
 
-  // Fetching data to set markers
-  const fetchData = async () => {
-    const response = await
-    fetch(apiURL)
-    .then((response) => response.json());
-
-    setMarkers(response.data);
-}
-
-useEffect(() => {
-    fetchData();
-})*/
-
-
-const Mapbox = () => {
-
+  const mapData = {
+    type: 'FeatureCollection',
+    name: 'Collection',
+    features: [
+      {
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'Polygon',
+          coordinates: [torotoData],
+        },
+      },
+    ],
+  };
 
   const mapContainer = useRef(null);
   const map = useRef(null);
@@ -116,8 +118,7 @@ const Mapbox = () => {
 
     // CONTROLS
     const nav = new mapboxgl.NavigationControl();
-    map.current.addControl(nav, "top-left");
-
+    map.current.addControl(nav, 'top-left');
 
     //  OVERVIEW MAP
     mapOverview.current = new mapboxgl.Map({
@@ -131,6 +132,41 @@ const Mapbox = () => {
 
     // BOUNDS ON OVERVIEW
     mapOverview.current.on('load', () => {
+      map.current.addSource('maine', {
+        type: 'geojson',
+        data: mapData,
+      });
+
+      map.current.addLayer({
+        id: 'maine',
+        source: 'maine',
+        type: 'fill',
+        paint: {
+          'fill-color': '#0080ff',
+          'fill-opacity': 1,
+        },
+      });
+
+      projects &&
+        projects.map((project) => {
+          let imgArray = project.images;
+          let randomI = Math.floor(Math.random() * 5);
+          let longlat = project.geometry.coordinates[0];
+          new mapboxgl.Marker({className: 'marker'})
+            .setLngLat(longlat[0], longlat[1])
+            .setPopup(
+              new mapboxgl.Popup({className: 'popups'}).setHTML(
+                `<div>
+            <img src=${imgArray[randomI]}/>
+            <h6>${project.location}</h6>
+            <h5>${project.name}</h5>
+            <p>${project.description}</p>
+            </div>`
+              )
+            )
+            .addTo(map.current);
+        });
+
       buildOverviewBounds();
     });
 
@@ -152,13 +188,11 @@ const Mapbox = () => {
 
   return (
     <div className="mapbox-parent-container">
-     
       <div ref={mapContainer} className="map-container">
         <MapCard />
         <ProjectLink />
-        </div>
+      </div>
 
-      
       <div className="map-overview-container">
         <div ref={mapOverviewContainer} className="map-container"></div>
       </div>

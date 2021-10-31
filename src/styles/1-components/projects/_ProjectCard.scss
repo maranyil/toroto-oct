@@ -1,14 +1,3 @@
-.p-location {
-  margin: 5px 0;
-  font-size: 0.9rem;
-}
-
-.p-name {
-  margin: 2px 0;
-  font-size: 1.6rem;
-  font-weight: 400;
-}
-
 .project-card {
   background-color: transparent;
   min-height: 32rem;
@@ -48,6 +37,17 @@
   
 
     text-align: left;
+
+    .p-location {
+      margin: 5px 0;
+      font-size: 0.9rem;
+    }
+    
+    .p-name {
+      margin: 2px 0;
+      font-size: 1.6rem;
+      font-weight: 400;
+    }
 
     p {
       font-size: 0.8rem;

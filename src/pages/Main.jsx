@@ -10,7 +10,7 @@ const Main = ({projects, setProjects}) => {
       <Navbar />
       <div style={{ display: 'flex', flexDirection: 'row' }}>
         <div style={{ height: '70vh' }}>
-          <Mapbox />
+          <Mapbox projects={projects}/>
         </div>
       </div>
       <ProjectsG 

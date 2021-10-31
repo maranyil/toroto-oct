@@ -11,7 +11,6 @@ const GridProjects = ({projects, setProjects}) => {
   
 
   useEffect(() => {
-
     fetch('https://fieldops-api.toroto.mx/api/projects', {
       method: "GET",
       mode: 'cors',
@@ -23,8 +22,8 @@ const GridProjects = ({projects, setProjects}) => {
       }
       throw response;
     })
-    .then(projects => {
-      setProjects(projects.data)
+    .then(data => {
+      setProjects(data.data)
     })
     .catch(error => {
       console.log("oh no", error);
@@ -34,6 +33,8 @@ const GridProjects = ({projects, setProjects}) => {
       setLoading(false)
     })
   }, [])
+
+
 
   return (
   <div className="cargando">

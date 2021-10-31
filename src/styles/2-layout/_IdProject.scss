@@ -1,1 +1,9 @@
 @import '../1-components/projects-id/ProjectInfo';
+@import '../1-components/projects-id/ProjectProblem';
+
+.IdProjects {
+    height: fit-content;
+
+    margin: 1.5rem 9rem 9rem;
+    font-family: 'Roboto', sans-serif;
+}
