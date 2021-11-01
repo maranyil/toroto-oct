@@ -10,24 +10,7 @@ const Mapbox = ({ projects }) => {
   /*{projects && projects.map((project) => {
     let torotoData = project.geometry;
   })}*/
-  const torotoData =
-    projects && projects.map((project) => project.geometry.coordinates[0]);
-  console.log(torotoData);
-
-  const mapData = {
-    type: 'FeatureCollection',
-    name: 'Collection',
-    features: [
-      {
-        type: 'Feature',
-        properties: {},
-        geometry: {
-          type: 'Polygon',
-          coordinates: [torotoData],
-        },
-      },
-    ],
-  };
+ 
 
   const mapContainer = useRef(null);
   const map = useRef(null);
@@ -116,9 +99,6 @@ const Mapbox = ({ projects }) => {
       minZoom: 4,
     });
 
-    // CONTROLS
-    const nav = new mapboxgl.NavigationControl();
-    map.current.addControl(nav, 'top-left');
 
     //  OVERVIEW MAP
     mapOverview.current = new mapboxgl.Map({
@@ -132,46 +112,33 @@ const Mapbox = ({ projects }) => {
 
     // BOUNDS ON OVERVIEW
     mapOverview.current.on('load', () => {
-      map.current.addSource('maine', {
-        type: 'geojson',
-        data: mapData,
-      });
-
-      map.current.addLayer({
-        id: 'maine',
-        source: 'maine',
-        type: 'fill',
-        paint: {
-          'fill-color': '#0080ff',
-          'fill-opacity': 1,
-        },
-      });
-
-      projects &&
-        projects.map((project) => {
-          let imgArray = project.images;
-          let randomI = Math.floor(Math.random() * 5);
-          let longlat = project.geometry.coordinates[0];
-          new mapboxgl.Marker({className: 'marker'})
-            .setLngLat(longlat[0], longlat[1])
-            .setPopup(
-              new mapboxgl.Popup({className: 'popups'}).setHTML(
-                `<div>
-            <img src=${imgArray[randomI]}/>
-            <h6>${project.location}</h6>
-            <h5>${project.name}</h5>
-            <p>${project.description}</p>
-            </div>`
-              )
-            )
-            .addTo(map.current);
-        });
-
       buildOverviewBounds();
     });
 
     // OVERVIEW MOVEMENT OF PARENT
     map.current.on('load', () => {
+      
+      projects &&
+        projects.map((project) => {
+          let imgArray = project.images;
+          let randomI = Math.floor(Math.random() * 5);
+          let longlat = project.geometry.coordinates[0];
+          new mapboxgl.Marker({className: 'marker', color: '#1A30DB'})
+            .setLngLat(longlat[0], longlat[1])
+            .setPopup(
+              new mapboxgl.Popup({className: 'popups'}).setHTML(
+                `<div>
+                
+            <img class="popupi" src=${imgArray[randomI]} alt="some example"/>
+            <h3>${project.location}</h3>
+            <h1><a href="#/proyectos/${project.id}">${project.name}</a></h1>
+            <p>${project.description}</p>
+            </div>`
+              )
+            )
+            .addTo(map.current);
+        }); 
+
       map.current.on('moveend', () => {
         const mapCenter = map.current.getCenter();
         const zoomAmount = map.current.getZoom().toFixed(2);
@@ -189,7 +156,10 @@ const Mapbox = ({ projects }) => {
   return (
     <div className="mapbox-parent-container">
       <div ref={mapContainer} className="map-container">
+        <div className="in-map">
         <MapCard />
+
+        </div>
         <ProjectLink />
       </div>
 

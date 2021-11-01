@@ -3,13 +3,13 @@ import medal from '../../assets/png/service_icon.png'
 
 
 const Projectinfo = ({projects}) => {
- 
+  let randomI = Math.floor(Math.random() * 5);
     return (
         <div className="projectinfo">
           <div className="p-grid">
           <div className="project-text">
-            <h6 className="p-location">{projects.location}</h6>
-            <h4 className="p-name">{projects.name}</h4>
+            <h3 className="p-big">{projects.location}</h3>
+            <h1 className="p-name">{projects.name}</h1>
           </div>
           <div className="s-container">
           {projects['services'].map((service) => (
@@ -19,7 +19,7 @@ const Projectinfo = ({projects}) => {
           <p>{projects.description}</p>
           </div>
 
-            <img className="pimage" src={projects.images['0']}></img>
+            <img className="pimage" src={projects.images[randomI]}></img>
         </div>
     )
 }

@@ -2,8 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import Footer from '../components/navbar/Footer';
 import Navbar from '../components/navbar/Navbar';
+import ProjectGallery from '../components/projects-id/ProjectGallery';
+import ProjectImplementation from '../components/projects-id/ProjectImplementation';
 import Projectinfo from '../components/projects-id/Projectinfo';
 import ProjectProblem from '../components/projects-id/ProjectProblem';
+import ProjectImpact from '../components/projects-id/ProjectImpact';
+import MapCard from '../components/mapbox/MapCard';
+import ProjectMap from '../components/projects-id/ProjectMap';
 
 const IdProject = () => {
   const [projects, setProjects] = useState([]);
@@ -46,6 +51,13 @@ const IdProject = () => {
         <div className="IdProjects">
           <Projectinfo projects={projects}/>
           <ProjectProblem projects={projects}/>
+          <ProjectImplementation projects={projects}/>
+          <ProjectImpact projects={projects} />
+          <ProjectMap projects={projects}/>
+          <ProjectGallery projects={projects} />
+          <div className="in-id">
+          <MapCard />
+          </div>
         </div>
       
       )}

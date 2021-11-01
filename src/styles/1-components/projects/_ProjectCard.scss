@@ -95,15 +95,6 @@
         img {
           object-fit: contain;
         }
-
-        &:hover {
-          background-color: $azul-to;
-          color: $blanco-to;
-
-          img {
-            filter: invert(100%);
-          }
-        }
       }
     }
 

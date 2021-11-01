@@ -6,7 +6,7 @@ import external from '../../assets/png/external-link.png';
 const Navbar = () => {
     return (
         <div id="top" className="navbar">
-            <Link to="/" onClick={() => window.location.href="/"} className="logo">
+            <Link to="/" onClick={() => window.location.href="/#"} className="logo">
                 <img src={logo} alt="main Toroto logo"/>
             </Link>
             <ul className="nav-options">

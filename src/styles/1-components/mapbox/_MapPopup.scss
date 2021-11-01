@@ -1,8 +1,44 @@
-.popups {
+.mapboxgl-popup-content {
+    z-index: 5;
+    width: 26rem;
     border-radius: 2rem;
-    width: 30rem;
+    text-align: left;
+    padding: 0;
+
+    h1 {
+        font: normal 400 1.5rem/1.5rem Roboto, sans-serif;
+        padding: 0 10px;
+    }
+
+    h3 {
+        font: normal 400 1rem/1rem Roboto, sans-serif;
+        padding: 0 10px;
+    }
+
+    p {
+        font-size: .8rem;
+        padding: 0 10px;
+    }
+
+    .popupi {
+        
+            height: 7rem;
+            width: 26rem;
+    
+            object-fit: cover;
+
+            border-radius: 1.2rem 1.2rem 0 0;
+        
+    }
+
+    .mapboxgl-popup-close-button {
+        display: none;
+    }
 }
 
 .marker {
     background-image: url('https://www.logolynx.com/images/logolynx/d9/d9919c041510c71109ff9bb7a42e2259.png');
+    background-size: cover;
+    width: 50px;
+    border-radius: 50%;
 }

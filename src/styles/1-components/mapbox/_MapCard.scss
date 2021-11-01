@@ -1,41 +1,68 @@
+.in-map {
+  /* From https://css.glass */
+  background: rgba(117, 207, 240, 0.34);
+  //box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4.9px);
+  -webkit-backdrop-filter: blur(4.9px);
+  //border: 1px solid rgba(117, 207, 240, 0.3);
+  height: 57vh;
+  width: 20rem;
+  z-index: 2;
+  border-radius: 1rem;
+
+  position: absolute;
+  text-align: left;
+
+  margin: 10% 70% 7% 5%;
+  padding: 1rem;
+
+  h1 {
+    font: 2.8rem Roboto, sans-serif;
+    height: 10rem;
+  }
+  p {
+    font: 1rem Roboto, sans-serif;
+  }
+
+}
+
+.in-id {
+  margin-top: 8rem;
+  
+  h1 {
+    font: normal 400 2rem/2.2rem Roboto, sans-serif;
+    text-align: center;
+  }
+  p {
+    font: 1rem Roboto, sans-serif;
+    text-align: justify;
+  }
+}
+
 .mapcard {
-    background-color: transparent;
-    height: 80vh;
-    width: 18rem;
-    z-index: 2;
+  z-index: 2;
+  width: 100%;
+  height: 100%;  
 
-    position: absolute;
-    text-align: left;
+  .cardbtn {
+    width: 100%;
+    height: 3rem;
+    background-color: $gris1;
 
-    margin: 10% 70% 7% 7%;
+    border-radius: 5px;
+    border: none;
 
-    h1 {
-        font: 2.8rem Roboto, sans-serif;
-        height: 10rem;
+    font: 1rem Roboto, sans-serif;
+    color: $blanco-to;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: border-radius 1.2s;
+    -webkit-transition: border-radius 1.2s;
+
+    &:hover {
+      border-radius: 35px 10px;
+      background-color: $rosa-to;
     }
-    p {
-        font: 1rem Roboto, sans-serif;
-    }
-
-    .cardbtn {
-        width: 100%;
-        height: 3rem;
-        background-color: $gris1;
-
-        border-radius: 5px;
-        border: none;
-
-        font: 1rem Roboto, sans-serif;
-        color: $blanco-to;
-        text-transform: uppercase;
-
-        cursor: pointer;
-        transition: border-radius 1.2s;
-        -webkit-transition: border-radius 1.2s;
-
-        &:hover {
-            border-radius: 35px 10px;
-            background-color: $rosa-to;  
-        }
-    }
+  }
 }

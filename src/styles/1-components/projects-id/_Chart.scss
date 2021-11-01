@@ -1,0 +1,38 @@
+.project-impact {
+  display: flex;
+  flex-direction: column;
+
+  .chart-container {
+      margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+
+    .graph-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+        max-height: 7rem;
+        max-width: 12rem;
+        background-color: $gris5;
+        border-radius: .8rem;
+        
+        h3 {
+            font: normal 500 1.1rem/1.3rem Roboto, sans-serif;
+            text-transform: uppercase;
+            padding: .5rem .6rem;
+            color: $gris1;
+        }
+
+        h4 {
+            font: normal bold 3.7rem/.7rem Roboto, sans-serif;
+            color: $azul-to;
+            margin: 0;
+        }
+    }
+  }
+}
