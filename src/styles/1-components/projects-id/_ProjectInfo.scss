@@ -2,7 +2,6 @@
   height: fit-content;
 
   font-family: 'Roboto', sans-serif;
-  
 
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -16,21 +15,20 @@
   }
 
   .p-grid {
-
     .p-text {
-      @media screen and (max-width:375px) {
+      @media screen and (max-width: 375px) {
         padding: 1rem;
       }
     }
 
-    @media screen and (max-width:375px) {
+    @media screen and (max-width: 375px) {
       width: 100%;
 
       z-index: 2;
       border-radius: 1.2rem 1.2rem 0 0;
       background: $blanco-to;
       margin-top: 20rem;
-      position: absolute;    
+      position: absolute;
     }
   }
 
@@ -42,7 +40,8 @@
 
     @media screen and (max-width: 375px) {
       width: 100vw;
-        position: relative; 
+      border-radius: 0;
+      position: relative;
     }
   }
 
@@ -50,55 +49,56 @@
     margin-top: 2.5rem;
     font-size: 1.1rem;
     @media screen and (max-width: 375px) {
-      font-size: .7rem;
-      padding: 0 .3rem;
+      font-size: 0.7rem;
+      padding: 0 0.3rem;
     }
   }
 }
 
 .s-container {
-    width: 100%;
+  width: 100%;
 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 10px;
-    row-gap: 10px;
-    align-content: center;
-    
-    margin-bottom: 1.2rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+  align-content: center;
+
+  margin-bottom: 1.2rem;
+
+  @media screen and (max-width: 375px) {
+    column-gap: 5px;
+    row-gap: 5px;
+  }
+
+  .s-btn {
+    height: 2.7rem;
+    width: 100%;
+    background-color: transparent;
+
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    border-radius: 40px;
+    border: $gris1 solid 1px;
+
+    white-space: normal;
+    font: 0.8rem Roboto;
 
     @media screen and (max-width: 375px) {
-      column-gap: 5px;
-      row-gap: 5px;
+      height: 3rem;
+      width: 90%;
+      font-size: 0.7rem;
     }
 
-    .s-btn {
-      height: 2.7rem;
-      width: 100%;
-      background-color: transparent;
+    .limage {
+      object-fit: contain;
+    }
 
-      display: flex;
-      flex-flow: row;
-      justify-content: flex-start;
-      align-items: center;
-
-      border-radius: 40px;
-      border: $gris1 solid 1px;
-
-      white-space: normal;
-      font: .8rem Roboto;
-
-      @media screen and (max-width: 375px) {
-        height: 3rem;
-        width: 90%;
-      }
-
-      .limage {
-        object-fit: contain;
-      }
-
-      &:hover {
-        font-size: 1rem;
-      }
+    &:hover {
+      font-size: 1rem;
     }
   }
+}

@@ -7,8 +7,7 @@ mapboxgl.accessToken =
   'pk.eyJ1IjoibWFyYW11bGF0byIsImEiOiJja3V5d294NHQxdnBsMndwNmJibDdkbmFxIn0.S45txLTZf7iE7mrY7J4KeA';
 
 const Mapbox = ({ projects }) => {
-  console.log(projects)
- 
+  console.log(projects);
 
   const mapContainer = useRef(null);
   const map = useRef(null);
@@ -83,7 +82,6 @@ const Mapbox = ({ projects }) => {
   };
 
   useEffect(() => {
-
     buildMaps(); // eslint-disable-next-line
   }, []);
 
@@ -98,35 +96,18 @@ const Mapbox = ({ projects }) => {
       minZoom: 4,
     });
 
-
-    //  OVERVIEW MAP
-    mapOverview.current = new mapboxgl.Map({
-      container: mapOverviewContainer.current,
-      style: 'mapbox://styles/maramulato/ckuyyajpf0b4m14o6dhw60150',
-      center: [lng, lat],
-      zoom: buildOverviewZoom(zoom),
-      interactive: false,
-      attributionControl: false,
-    });
-
-    // BOUNDS ON OVERVIEW
-    mapOverview.current.on('load', () => {
-      buildOverviewBounds();
-    });
-
-    // OVERVIEW MOVEMENT OF PARENT
+    // MARKERS
     map.current.on('load', () => {
-      
       projects &&
         projects.map((project) => {
           let imgArray = project.images;
           let randomI = Math.floor(Math.random() * 5);
           let longlat = project.geometry.coordinates[0];
-          
-          new mapboxgl.Marker({className: 'marker', color: '#1A30DB'})
+
+          new mapboxgl.Marker({ className: 'marker', color: '#1A30DB' })
             .setLngLat(longlat[0], longlat[1])
             .setPopup(
-              new mapboxgl.Popup({className: 'popups'}).setHTML(
+              new mapboxgl.Popup({ className: 'popups' }).setHTML(
                 `<div>
                 
             <img class="popupi" src=${imgArray[randomI]} alt="some example"/>
@@ -137,10 +118,24 @@ const Mapbox = ({ projects }) => {
               )
             )
             .addTo(map.current);
-        }); 
+        });
 
-        
+      //  OVERVIEW MAP
+      mapOverview.current = new mapboxgl.Map({
+        container: mapOverviewContainer.current,
+        style: 'mapbox://styles/maramulato/ckuyyajpf0b4m14o6dhw60150',
+        center: [lng, lat],
+        zoom: buildOverviewZoom(zoom),
+        interactive: false,
+        attributionControl: false,
+      });
 
+      // BOUNDS ON OVERVIEW
+      mapOverview.current.on('load', () => {
+        buildOverviewBounds();
+      });
+
+      // OVERVIEW MOVEMENT OF PARENT
       map.current.on('moveend', () => {
         const mapCenter = map.current.getCenter();
         const zoomAmount = map.current.getZoom().toFixed(2);
@@ -159,8 +154,7 @@ const Mapbox = ({ projects }) => {
     <div className="mapbox-parent-container">
       <div ref={mapContainer} className="map-container">
         <div className="in-map">
-        <MapCard />
-
+          <MapCard />
         </div>
         <ProjectLink />
       </div>

@@ -20,51 +20,50 @@ const IdProject = () => {
 
   useEffect(() => {
     fetch(apiURL, {
-      method: "GET",
+      method: 'GET',
       mode: 'cors',
-      headers: Headers
+      headers: Headers,
     })
-    .then(response => {
-      if (response.status === 200) {
-        return response.json()
-      }
-      throw response;
-    })
-    .then(data => {
-      setProjects(data.data[0])
-    })
-    .catch(error => {
-      console.log("oh no", error);
-      setErr(error)
-    })
-    .finally(() => {
-      setLoading(false)
-      
-    }) // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
-
+      .then((response) => {
+        if (response.status === 200) {
+          return response.json();
+        }
+        throw response;
+      })
+      .then((data) => {
+        setProjects(data.data[0]);
+      })
+      .catch((error) => {
+        console.log('oh no', error);
+        setErr(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      }); // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div>
       <Navbar />
-      {loading ? <h1>Cargando...</h1> : (
+      {loading ? (
+        <h1>Cargando...</h1>
+      ) : (
         <div className="IdProjects">
-          <Projectinfo projects={projects}/>
-          <ProjectProblem projects={projects}/>
-          <ProjectImplementation projects={projects}/>
+          <Projectinfo projects={projects} />
+          <ProjectProblem projects={projects} />
+          <ProjectImplementation projects={projects} />
           <ProjectImpact projects={projects} />
-          <ProjectMap projects={projects}/>
+          <ProjectMap projects={projects} />
           <ProjectGallery projects={projects} />
           <div className="in-id">
-          <MapCard />
+            <MapCard />
           </div>
         </div>
-      
       )}
-      
+
       <Footer />
     </div>
   );
 };
 
-export default IdProject; 
+export default IdProject;

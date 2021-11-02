@@ -1,20 +1,18 @@
-import React from 'react'
-import Collapsible from 'react-collapsible'
+import React from 'react';
+import Collapsible from 'react-collapsible';
 
-const ProjectImplementation = ({projects}) => {
-    
-    return (
-        <div className="project-collapsible">
-            <h4 className="p-name">Implementación</h4>
-            <h3 className="p-medium">Actividades de restauración</h3>
-            {projects['activities'].map((activity) => (
-            <Collapsible trigger={activity.name}>
-                <p>{activity.description}</p>
-            </Collapsible>
-          ))}
-            
-        </div>
-    )
-}
+const ProjectImplementation = ({ projects }) => {
+  return (
+    <div className="project-collapsible">
+      <h4 className="p-name">Implementación</h4>
+      <h3 className="p-medium">Actividades de restauración</h3>
+      {projects['activities'].map((activity) => (
+        <Collapsible trigger={activity.name}>
+          <p>{activity.description}</p>
+        </Collapsible>
+      ))}
+    </div>
+  );
+};
 
-export default ProjectImplementation
+export default ProjectImplementation;

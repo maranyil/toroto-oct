@@ -64,19 +64,16 @@ const ProjectMap = ({ projects }) => {
       let area = geojsonArea.geometry(myGeo).toFixed(2);
       console.log(area);
 
-      map.current.addControl(new mapboxgl.NavigationControl())
+      map.current.addControl(new mapboxgl.NavigationControl());
 
-      new mapboxgl.Marker({className: 'marker', color: '#1A30DB'})
-            .setLngLat([lng, lat])
-            .setPopup(
-              new mapboxgl.Popup({className: 'propups'}).setHTML(
-                `<p>Área de proyecto: ${area} m2</p>`
-              )
-            )
-            .addTo(map.current)
-
-      
-      
+      new mapboxgl.Marker({ className: 'marker', color: '#1A30DB' })
+        .setLngLat([lng, lat])
+        .setPopup(
+          new mapboxgl.Popup({ className: 'propups' }).setHTML(
+            `<p>Área de proyecto: ${area} m2</p>`
+          )
+        )
+        .addTo(map.current);
     });
   };
 

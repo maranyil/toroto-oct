@@ -1,77 +1,75 @@
 .footer {
-    background-color: $azul-to;
-    height: 3.5rem;
-    padding: 0 10rem;
-  
-    display: flex;
-    flex-direction: row;
-  
-    justify-content: space-between;
-    align-items: center;
+  background-color: $azul-to;
+  height: 3.5rem;
+  padding: 0 10rem;
+
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-between;
+  align-items: center;
+
+  @media screen and (max-width: 375px) {
+    max-width: 375px;
+    padding: 0;
+    margin-top: 3rem;
+  }
+
+  .logo {
+    background: transparent;
+    border: none;
+    cursor: pointer;
 
     @media screen and (max-width: 375px) {
-      max-width: 375px;
-      padding: 0;
-      margin-top: 3rem;
+      padding: 0 2rem;
     }
-  
-    .logo {
-      background: transparent;
-      border: none;
+  }
+
+  .nav-options {
+    color: $blanco-to;
+    width: 25vw;
+    height: 2rem;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    list-style-type: none;
+    text-transform: uppercase;
+    font: 0.9rem normal Roboto, sans-serif;
+
+    @media screen and (max-width: 375px) {
+      width: fit-content;
+    }
+
+    .navf-item {
       cursor: pointer;
+      padding: 0.5rem;
+      letter-spacing: 1.25px;
+      transition: border-radius 1.2s;
+      -webkit-transition: border-radius 1.2s;
 
       @media screen and (max-width: 375px) {
-        padding: 0 2rem;
+        padding: 0.3rem;
+      }
+
+      img {
+        @media screen and (max-width: 375px) {
+          height: 1rem;
+        }
+      }
+
+      &:hover {
+        filter: opacity(30%);
       }
     }
-  
-    .nav-options {
-      color: $blanco-to;
-      width: 25vw;
-      height: 2rem;
-  
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-  
-      list-style-type: none;
-      text-transform: uppercase;
-      font: 0.9rem normal Roboto, sans-serif;
 
-      @media screen and (max-width: 375px) {
-        
-        width: fit-content
-       }
-  
-      .navf-item {
-        cursor: pointer;
-        padding: 0.5rem;
-        letter-spacing: 1.25px;
-        transition: border-radius 1.2s;
-        -webkit-transition: border-radius 1.2s;
+    a {
+      text-decoration: none;
 
-        @media screen and (max-width: 375px) {
-          padding: .3rem;
-         }
-
-        img {
-          @media screen and (max-width: 375px) {
-          height: 1rem;
-         }
-        }
-  
-        &:hover {
-            filter: opacity(30%);
-        }
-        
-      }
-  
-      a {
-        text-decoration: none;
-  
-        &:visited {
-          color: $amarillo-to;
-        }
+      &:visited {
+        color: $amarillo-to;
       }
     }
   }
+}

@@ -12,30 +12,26 @@ const Footer = () => {
       <ul className="nav-options">
         <li className="navf-item">
           <a href="https://www.facebook.com/holatoroto">
-            <img src={fb} alt="facebook link"/>
+            <img src={fb} alt="facebook link" />
           </a>
         </li>
         <li className="navf-item">
           <a href="https://www.linkedin.com/company/toroto/">
-              <img src={lnkin} alt="linkedIn link"/>
+            <img src={lnkin} alt="linkedIn link" />
           </a>
         </li>
         <li className="navf-item">
           <a href="https://www.instagram.com/holatoroto/">
-              <img src={insta} alt="instagram link"/>
+            <img src={insta} alt="instagram link" />
           </a>
         </li>
         <li className="navf-item">
           <a href="https://twitter.com/holatoroto">
-              <img src={twit} alt="twitter link"/>
+            <img src={twit} alt="twitter link" />
           </a>
         </li>
       </ul>
-      <Link
-        to="top"
-        smooth={true}
-        className="logo"
-      >
+      <Link to="top" smooth={true} className="logo">
         <img src={logo} alt="main Toroto logo" />
       </Link>
     </div>

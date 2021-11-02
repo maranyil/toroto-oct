@@ -1,12 +1,11 @@
 .main-gallery {
-  width: 100vw;
   height: 30rem;
   margin-top: 5rem;
   margin-bottom: 5rem;
 
   @media screen and (max-width: 375px) {
-      height: 20rem;
-      margin-bottom: 2rem;
+    height: 20rem;
+    margin-bottom: 2rem;
   }
   .project-gallery {
     display: flex;
@@ -19,15 +18,14 @@
 
     .gallery-img {
       max-height: 100%;
-      width: 32%;
+      width: 30%;
       object-fit: cover;
       vertical-align: bottom;
       margin: 0.2rem;
       border-radius: 0.5rem;
 
-      @media screen and (max-width:375px) {
-          width: 30vw;
-          
+      @media screen and (max-width: 375px) {
+        width: 30vw;
       }
     }
   }

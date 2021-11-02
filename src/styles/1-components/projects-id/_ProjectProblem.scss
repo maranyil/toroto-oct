@@ -1,15 +1,13 @@
 .project-problem {
-    margin-top: 3rem;
+  margin-top: 3rem;
 
+  @media screen and (max-width: 375px) {
+    margin-top: 15rem;
+  }
+  p {
+    font: normal 400 1rem/1.5rem Roboto, sans-serif;
     @media screen and (max-width: 375px) {
-      
-        margin-top: 15rem;
-      }
-   p {
-       font: normal 400 1rem/1.5rem Roboto, sans-serif;
-       @media screen and (max-width: 375px) {
-      
-        font: 400 .7rem/.9rem Roboto, sans-serif;
-      }
-   }
+      font: 400 0.7rem/.9rem Roboto, sans-serif;
+    }
+  }
 }

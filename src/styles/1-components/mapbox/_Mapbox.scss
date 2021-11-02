@@ -5,10 +5,10 @@
 .mapbox-super-container {
   display: flex;
   flex-direction: row;
-  
+
   @media screen and (max-width: 375px) {
     display: none;
-   }
+  }
 }
 
 .mapbox-sper-container {
@@ -16,40 +16,36 @@
 
   @media screen and (max-width: 375px) {
     display: none;
-   }
- 
+  }
 }
 
 .mapbox-parent-container {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 
-    @media screen and (max-width: 375px) {
-     display: none;
-    }
-
-    .mapboxgl-control-container {
-        display: none;
-    }
-
-    .map-container {
-        width: 100%;
-        height: 100%;
-      }
-      
-      .map-overview-container {
-        position: absolute;
-        top: .5rem;
-        left: 77%;
-        width: 20%;
-        height: 20%;
-        overflow: hidden;
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      }
+  @media screen and (max-width: 375px) {
+    display: none;
   }
-  
-  
- 
+
+  .mapboxgl-control-container {
+    display: none;
+  }
+
+  .map-container {
+    width: 100%;
+    height: 100%;
+  }
+
+  .map-overview-container {
+    position: absolute;
+    top: 0.5rem;
+    left: 77%;
+    width: 20%;
+    height: 20%;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+}
