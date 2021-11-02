@@ -7,7 +7,7 @@ const ProjectGallery = ({projects}) => {
             <div className="project-gallery">
 
             {projects && projects['images'].map((image) => (
-                <img className="gallery-img" src={image} />
+                <img className="gallery-img" alt="gallery-example" src={image} key={image}/>
                 ))}
                 </div>
         </div>

@@ -1,6 +1,6 @@
 .in-map {
   /* From https://css.glass */
-  background: rgba(117, 207, 240, 0.34);
+  background: rgba(117, 207, 240, 0.6);
   //box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4.9px);
   -webkit-backdrop-filter: blur(4.9px);
@@ -26,16 +26,30 @@
 
 }
 
+.in-mobilev {
+  font-family: 'Roboto', sans-serif;
+}
+
 .in-id {
   margin-top: 8rem;
+
+  @media screen and (max-width:375px) {
+    margin-top: 0;
+  }
   
   h1 {
     font: normal 400 2rem/2.2rem Roboto, sans-serif;
     text-align: center;
+    @media screen and (max-width:375px) {
+     font-size: 1rem;
+    }
   }
   p {
     font: 1rem Roboto, sans-serif;
     text-align: justify;
+    @media screen and (max-width:375px) {
+      font-size: .7rem;
+     }
   }
 }
 

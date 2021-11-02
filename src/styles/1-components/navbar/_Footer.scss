@@ -4,15 +4,25 @@
     padding: 0 10rem;
   
     display: flex;
+    flex-direction: row;
   
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 375px) {
+      max-width: 375px;
+      padding: 0;
+      margin-top: 3rem;
+    }
   
     .logo {
       background: transparent;
       border: none;
-  
       cursor: pointer;
+
+      @media screen and (max-width: 375px) {
+        padding: 0 2rem;
+      }
     }
   
     .nav-options {
@@ -27,17 +37,33 @@
       list-style-type: none;
       text-transform: uppercase;
       font: 0.9rem normal Roboto, sans-serif;
+
+      @media screen and (max-width: 375px) {
+        
+        width: fit-content
+       }
   
-      .nav-item {
+      .navf-item {
         cursor: pointer;
         padding: 0.5rem;
         letter-spacing: 1.25px;
         transition: border-radius 1.2s;
         -webkit-transition: border-radius 1.2s;
+
+        @media screen and (max-width: 375px) {
+          padding: .3rem;
+         }
+
+        img {
+          @media screen and (max-width: 375px) {
+          height: 1rem;
+         }
+        }
   
         &:hover {
             filter: opacity(30%);
         }
+        
       }
   
       a {

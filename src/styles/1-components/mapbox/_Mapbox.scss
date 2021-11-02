@@ -2,10 +2,32 @@
 @import './ProjectLink';
 @import './MapPopup';
 
+.mapbox-super-container {
+  display: flex;
+  flex-direction: row;
+  
+  @media screen and (max-width: 375px) {
+    display: none;
+   }
+}
+
+.mapbox-sper-container {
+  height: 70vh;
+
+  @media screen and (max-width: 375px) {
+    display: none;
+   }
+ 
+}
+
 .mapbox-parent-container {
     position: relative;
     width: 100vw;
     height: 100vh;
+
+    @media screen and (max-width: 375px) {
+     display: none;
+    }
 
     .mapboxgl-control-container {
         display: none;

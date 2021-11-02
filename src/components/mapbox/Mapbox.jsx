@@ -7,9 +7,7 @@ mapboxgl.accessToken =
   'pk.eyJ1IjoibWFyYW11bGF0byIsImEiOiJja3V5d294NHQxdnBsMndwNmJibDdkbmFxIn0.S45txLTZf7iE7mrY7J4KeA';
 
 const Mapbox = ({ projects }) => {
-  /*{projects && projects.map((project) => {
-    let torotoData = project.geometry;
-  })}*/
+  console.log(projects)
  
 
   const mapContainer = useRef(null);
@@ -18,7 +16,7 @@ const Mapbox = ({ projects }) => {
   const [lat, setLat] = useState(23.034);
   const [lng, setLng] = useState(-108);
   const [zoom, setZoom] = useState(4.2);
-  const OVERVIEW_DIFFERENCE = 6;
+  const OVERVIEW_DIFFERENCE = 5;
   const OVERVIEW_MIN_ZOOM = 3;
   const OVERVIEW_MAX_ZOOM = 19;
 
@@ -85,7 +83,8 @@ const Mapbox = ({ projects }) => {
   };
 
   useEffect(() => {
-    buildMaps();
+
+    buildMaps(); // eslint-disable-next-line
   }, []);
 
   const buildMaps = () => {
@@ -123,6 +122,7 @@ const Mapbox = ({ projects }) => {
           let imgArray = project.images;
           let randomI = Math.floor(Math.random() * 5);
           let longlat = project.geometry.coordinates[0];
+          
           new mapboxgl.Marker({className: 'marker', color: '#1A30DB'})
             .setLngLat(longlat[0], longlat[1])
             .setPopup(
@@ -139,13 +139,15 @@ const Mapbox = ({ projects }) => {
             .addTo(map.current);
         }); 
 
+        
+
       map.current.on('moveend', () => {
         const mapCenter = map.current.getCenter();
         const zoomAmount = map.current.getZoom().toFixed(2);
         setZoom(zoomAmount);
 
         mapOverview.current.flyTo({
-          center: [mapCenter.lng.toFixed(3), mapCenter.lat.toFixed(3)],
+          center: [mapCenter.lng.toFixed(5), mapCenter.lat.toFixed(5)],
           zoom: buildOverviewZoom(zoomAmount),
         });
         buildOverviewBounds();

@@ -39,8 +39,8 @@ const IdProject = () => {
     })
     .finally(() => {
       setLoading(false)
-      console.log(projects);
-    })
+      
+    }) // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
 

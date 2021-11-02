@@ -19,7 +19,7 @@ const Projectinfo = ({projects}) => {
           <p>{projects.description}</p>
           </div>
 
-            <img className="pimage" src={projects.images[randomI]}></img>
+            <img alt="proyectos de campo, ejemplos" className="pimage" src={projects.images[randomI]}></img>
         </div>
     )
 }

@@ -21,7 +21,7 @@ function App() {
       headers: Headers
     })
     .then(response => {
-      if (response.status === 200) {
+      if (response.status < 400) {
         return response.json()
       }
       throw response;
@@ -36,8 +36,8 @@ function App() {
     .finally(() => {
       setLoading(false)
       sessionStorage.setItem('locals', projects)
-    })
-  }, [])
+    })// eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []) 
   
   return (
     <Router>

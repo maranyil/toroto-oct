@@ -10,22 +10,22 @@ const Footer = () => {
   return (
     <div className="footer">
       <ul className="nav-options">
-        <li className="nav-item">
+        <li className="navf-item">
           <a href="https://www.facebook.com/holatoroto">
             <img src={fb} alt="facebook link"/>
           </a>
         </li>
-        <li className="nav-item">
+        <li className="navf-item">
           <a href="https://www.linkedin.com/company/toroto/">
               <img src={lnkin} alt="linkedIn link"/>
           </a>
         </li>
-        <li className="nav-item">
+        <li className="navf-item">
           <a href="https://www.instagram.com/holatoroto/">
               <img src={insta} alt="instagram link"/>
           </a>
         </li>
-        <li className="nav-item">
+        <li className="navf-item">
           <a href="https://twitter.com/holatoroto">
               <img src={twit} alt="twitter link"/>
           </a>

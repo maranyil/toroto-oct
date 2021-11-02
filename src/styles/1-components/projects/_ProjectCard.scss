@@ -1,7 +1,7 @@
 .project-card {
   background-color: transparent;
-  min-height: 32rem;
-  max-height: fit-content;
+  min-height: 14rem;
+  
   width: 28rem;
 
   border-radius: 1.2rem;
@@ -16,18 +16,27 @@
       animation: wipe-enter 1s;  
   }
 
+  @media screen and (max-width: 375px) {
+    
+    width: 20rem; 
+  }
+
   .card-img {
     height: 8rem;
     width: 100%;
     border-radius: 1.2rem 1.2rem 0 0;
     object-fit: cover;
+
+    @media screen and (max-width: 375px) {
+      height: 5rem;
+    }
   }
 
   .card-info {
     background-color: $blanco-to;
     padding: 1.2rem;
-    min-height: 20rem;
-    max-height: fit-content;
+    height: 22rem;
+    
 
     border-radius: 0 0 1.2rem 1.2rem;
 
@@ -38,15 +47,30 @@
 
     text-align: left;
 
+    @media screen and (max-width: 375px) {
+      height: 14rem;
+      justify-content: flex-start;
+    }
+
     .p-location {
       margin: 5px 0;
       font-size: 0.9rem;
+
+      @media screen and (max-width: 375px) {
+        font-size: 0.7rem;
+        font-weight: 500;
+      }
     }
     
     .p-name {
       margin: 2px 0;
       font-size: 1.6rem;
       font-weight: 400;
+
+      @media screen and (max-width: 375px) {
+        font-size: 1rem;
+        font-weight: 500;
+      }
     }
 
     p {
@@ -63,6 +87,10 @@
       &:hover {
         -webkit-line-clamp: 5;
       }
+
+      @media screen and (max-width: 375px) {
+        font-size: .7rem; 
+      }
     }
 
     .service-container {
@@ -75,6 +103,10 @@
       align-content: center;
       
       margin-bottom: 1.2rem;
+
+      @media screen and (max-width: 375px) {
+        display: none;
+      }
 
       .services-btn {
         height: 2.7rem;

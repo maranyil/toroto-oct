@@ -1,6 +1,11 @@
-// The main container element
+
 .project-collapsible {
   margin-top: 6rem;
+  margin-bottom: 4rem;
+
+  @media screen and (max-width: 375px) {
+    margin-top: 2rem;
+  }
 }
 
 .Collapsible {
@@ -8,10 +13,9 @@
   }
   
   
-  //The content within the collaspable area
   .Collapsible__contentInner {
     padding: 10px;
-    //border-top: 1px solid $gris1;
+    
    
   
     p {

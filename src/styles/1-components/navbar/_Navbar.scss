@@ -8,6 +8,7 @@
   justify-content: space-between;
   align-items: center;
 
+
   .logo {
     background: transparent;
     border: none;
@@ -28,6 +29,16 @@
     text-transform: uppercase;
     font: 0.9rem normal Roboto, sans-serif;
 
+    @media screen and (max-width: 375px) {
+      z-index: 1;
+      position: relative;
+      flex-direction: column;
+      margin-top: 15rem;
+  
+      left: 0;
+    }
+    
+
     .nav-item {
       cursor: pointer;
       padding: 0.5rem;
@@ -35,15 +46,21 @@
       transition: border-radius 1.2s;
       -webkit-transition: border-radius 1.2s;
 
+      @media screen and(max-width:375px) {
+          border-top: 1px solid $azul-to;
+          margin-right: 40rem;
+          text-align: left;
+      }
+
       &:hover {
-          border-radius: 50px 50px 50px 10px;
-          background-color: $blanco-to; 
-          color: $gris1; 
+        border-radius: 50px 50px 50px 10px;
+        background-color: $blanco-to;
+        color: $gris1;
       }
 
       &:active {
-          background-color: $rosa-to;
-          color: $gris5;
+        background-color: $rosa-to;
+        color: $gris5;
       }
     }
 
@@ -53,6 +70,23 @@
       &:visited {
         color: $amarillo-to;
       }
+    }
+  }
+
+  .nabtn {
+    display: none;
+
+    @media screen and (max-width:375px) {
+      display: block;
+      position: absolute;
+      z-index: 3;
+      cursor: pointer;
+
+      background-color: transparent;
+      border: none;
+
+      top: .5rem;
+      left: 1.7rem;
     }
   }
 }

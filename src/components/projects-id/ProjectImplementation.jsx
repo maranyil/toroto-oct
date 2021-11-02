@@ -2,7 +2,7 @@ import React from 'react'
 import Collapsible from 'react-collapsible'
 
 const ProjectImplementation = ({projects}) => {
-    console.log(projects.activities)
+    
     return (
         <div className="project-collapsible">
             <h4 className="p-name">Implementación</h4>
