@@ -1,0 +1,29 @@
+@import '../1-components/mapbox/MapCard';
+@import '../1-components/mapbox/Mapbox';
+@import '../1-components/projects/Projects';
+@import '../1-components/navbar/Navbar';
+@import '../1-components/navbar/Footer';
+@import '../1-components/mapbox/MobileV';
+
+.Main {
+   .projects-g {
+       margin-top: 35vh;
+       margin-bottom: 8vh;
+
+       @media screen and (max-width: 375px) {
+           margin: 90% 0 5vh;
+       }
+   }
+
+   @media screen and (min-width: 378px) {
+    .mobileV {
+        display: none;
+    }
+}
+
+   @media screen and (max-width: 375px) {
+    .mapbox-parent-container {
+        display: none;
+    }
+  }
+}

@@ -1,0 +1,158 @@
+.project-card {
+  background-color: transparent;
+  min-height: 14rem;
+  
+  width: 28rem;
+
+  border-radius: 1.2rem;
+  color: $negro-to;
+  box-shadow: 0 8px 8px -4px $gris4;
+
+  font-family: 'Roboto', sans-serif;
+
+  margin-bottom: 2rem;
+
+  @media (prefers-reduced-motion: no-preference) {
+      animation: wipe-enter 1s;  
+  }
+
+  @media screen and (max-width: 375px) {
+    
+    width: 20rem; 
+  }
+
+  .card-img {
+    height: 8rem;
+    width: 100%;
+    border-radius: 1.2rem 1.2rem 0 0;
+    object-fit: cover;
+
+    @media screen and (max-width: 375px) {
+      height: 5rem;
+    }
+  }
+
+  .card-info {
+    background-color: $blanco-to;
+    padding: 1.2rem;
+    height: 22rem;
+    
+
+    border-radius: 0 0 1.2rem 1.2rem;
+
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+  
+
+    text-align: left;
+
+    @media screen and (max-width: 375px) {
+      height: 14rem;
+      justify-content: flex-start;
+    }
+
+    .p-location {
+      margin: 5px 0;
+      font-size: 0.9rem;
+
+      @media screen and (max-width: 375px) {
+        font-size: 0.7rem;
+        font-weight: 500;
+      }
+    }
+    
+    .p-name {
+      margin: 2px 0;
+      font-size: 1.6rem;
+      font-weight: 400;
+
+      @media screen and (max-width: 375px) {
+        font-size: 1rem;
+        font-weight: 500;
+      }
+    }
+
+    p {
+      font-size: 0.8rem;
+      display: -webkit-box;
+
+      max-width: 100%;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+
+      transition-duration: .2s;
+
+      &:hover {
+        -webkit-line-clamp: 5;
+      }
+
+      @media screen and (max-width: 375px) {
+        font-size: .7rem; 
+      }
+    }
+
+    .service-container {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 10px;
+      row-gap: 10px;
+      align-content: center;
+      
+      margin-bottom: 1.2rem;
+
+      @media screen and (max-width: 375px) {
+        display: none;
+      }
+
+      .services-btn {
+        height: 2.7rem;
+        width: 100%;
+        background-color: transparent;
+
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        border-radius: 40px;
+        border: $gris1 solid 1px;
+
+        white-space: normal;
+        font: .8rem Roboto;
+
+        img {
+          object-fit: contain;
+        }
+      }
+    }
+
+    .full-view {
+      height: 3rem;
+      width: 100%;
+      background-color: transparent;
+      
+
+      border-radius: 5px;
+      border: $gris1 solid 1px;
+
+      font: 1rem Roboto, sans-serif;
+      color: $gris1;
+      text-transform: uppercase;
+
+      cursor: pointer;
+      transition: border-radius 1.2s;
+      -webkit-transition: border-radius 1.2s;
+
+      &:hover {
+        border-radius: 50px 10px;
+        background-color: $rosa-to;
+        color: $gris5;
+        border: none;
+      }
+    }
+  }
+}
