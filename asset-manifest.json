@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/toroto-oct/static/css/main.404f5c0f.chunk.css",
+    "main.js": "/toroto-oct/static/js/main.b3d380e4.chunk.js",
+    "main.js.map": "/toroto-oct/static/js/main.b3d380e4.chunk.js.map",
+    "runtime-main.js": "/toroto-oct/static/js/runtime-main.f1052520.js",
+    "runtime-main.js.map": "/toroto-oct/static/js/runtime-main.f1052520.js.map",
+    "static/js/2.4167ab66.chunk.js": "/toroto-oct/static/js/2.4167ab66.chunk.js",
+    "static/js/2.4167ab66.chunk.js.map": "/toroto-oct/static/js/2.4167ab66.chunk.js.map",
+    "static/js/3.03049a01.chunk.js": "/toroto-oct/static/js/3.03049a01.chunk.js",
+    "static/js/3.03049a01.chunk.js.map": "/toroto-oct/static/js/3.03049a01.chunk.js.map",
+    "index.html": "/toroto-oct/index.html",
+    "static/css/main.404f5c0f.chunk.css.map": "/toroto-oct/static/css/main.404f5c0f.chunk.css.map",
+    "static/js/2.4167ab66.chunk.js.LICENSE.txt": "/toroto-oct/static/js/2.4167ab66.chunk.js.LICENSE.txt",
+    "static/media/header_img.ca43c4a7.png": "/toroto-oct/static/media/header_img.ca43c4a7.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f1052520.js",
+    "static/js/2.4167ab66.chunk.js",
+    "static/css/main.404f5c0f.chunk.css",
+    "static/js/main.b3d380e4.chunk.js"
+  ]
+}
